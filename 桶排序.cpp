@@ -1,13 +1,18 @@
 #include<stdio.h>
 int main()
-{
-	int i,j;
-	for(i=1;i<10;i++)
-	{
-		for(j=1;j<=i;j++)
-		{
-			printf("%d*%d=%2d ",i,j,i*j);
-		}
-		printf("\n");
-	}
- } 
+{int box[1000]={0};
+ int n,x,i,j;
+ printf("请输入数据个数：\n");
+ scanf("%d",&n);
+ for(i=1;i<=n;i++)
+ {scanf("%d",&x);
+  box[x]+=1;
+ }
+ for(i=1;i<1000;i++)
+ if(box[i]!=0)
+ {for(j=1;j<=box[i];j++)
+  {printf("%d ",i);
+  }
+ }
+ return 0;
+}

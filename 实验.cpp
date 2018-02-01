@@ -1,18 +1,7 @@
 #include <stdio.h>
 int main() {
-	int i=1,j;
-one:
-	if(i<10) {
-		j=1;
-two:
-		if(j<=i) {
-			printf("%d*%d=%-2d ",j,i,i*j);
-			j++;
-			goto two;
-		}
-		printf("\n");
-		i++;
-		goto one;
+	if(1%2) {
+		printf("%f",1+1/2.0+1/3.0+1/4.0+1/5.0);
 	}
-	return 0;
+
 }

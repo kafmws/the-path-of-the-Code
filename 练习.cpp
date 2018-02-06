@@ -1,18 +1,16 @@
 #include<stdio.h>
-int main(){
-	int num,i=1,flag=1;
-	scanf("%d",&num);
-	one:while(i<=num&&num<i*10){
-		flag=0;
-		for(;i>0;i/=10){
-			printf("%d ",num/i);
-			num%=i;
+int gcd(int a,int b){
+	int i,t,ret;
+	a<b?t=a:t=b;
+	for(i=1;i<=t;i++){
+		if(a%i==0&&b%i==0){
+			ret=i;
 		}
-		break;
 	}
-	if(flag){
-			i*=10;
-			goto one;
-		}
-		return 0;
+	return ret;
 } 
+int main(){
+	int a,b;
+	scanf("%d %d",&a,&b);
+	printf("%d",gcd(a,b));
+}

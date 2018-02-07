@@ -1,24 +1,24 @@
 #include<stdio.h>
 #include<math.h>
-int main() {
-	int i,j,x,y,v,n=0;
-	printf("请输入区间[x,y]:\n");
-	scanf("[%d,%d]",&x,&y);
-	for(i=x; i<=y; i++) {
-		int flag=1;
-		v=pow(i,0.5);
-		for(j=2; j<=v; j++) {
-			if(i%j==0) {
-				flag=0;
-				break;
-			}
-		}
-		if(i!=0&&i!=1) {
-			if(flag==1) {
-				n++;
-				printf("%d ",i);
-			}
+int judge(int a) {
+	int i,flag=1;
+	for(i=2; i<=(int)sqrt(a); i++) {
+		if(a%i==0) {
+			flag=0;
+			break;
 		}
 	}
-	printf("\n[%d,%d]内共有%d个素数。",x,y,n);
+	return flag;
+}
+int main() {
+	int a,b,i,count=0;
+	scanf("%d %d",&a,&b);
+	for(i=a==0||a==1?2:a; i<=b; i++) {
+		if(judge(i)||a==2) {
+			printf("%d\n",i);
+			count++;
+		}
+	}
+	printf("\n[%d,%d]内共有%d个素数。",a,b,count);
+	return 0;
 }

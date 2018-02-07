@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include<math.h>
 int main() {
-	printf("");
+	char i=0b10000000;
+	printf("%d",i);
 	return 0;
 }
 

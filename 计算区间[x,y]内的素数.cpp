@@ -11,14 +11,16 @@ int judge(int a) {
 	return flag;
 }
 int main() {
-	int a,b,i,count=0;
+	int a,b,i,count=0,max=0;
 	scanf("%d %d",&a,&b);
 	for(i=a==0||a==1?2:a; i<=b; i++) {
 		if(judge(i)||a==2) {
-			printf("%d\n",i);
+			max=i;
+//			printf("%d,",i);
 			count++;
 		}
 	}
-	printf("\n[%d,%d]内共有%d个素数。",a,b,count);
+	printf("%d\n%d",max,count);
+//	printf("\n[%d,%d]内共有%d个素数。",a,b,count);
 	return 0;
 }

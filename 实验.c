@@ -1,8 +1,11 @@
 #include<stdio.h>
-int main(){
-	int i,seq[]={[0]=0,1,[3]=4};
-	for(i=0;i<4;i++){
-		printf("%d ",seq[i]);
+#include<stdlib.h>
+#include<string.h>
+int main() {
+	char a,b;
+	a='a',b='b';
+	if(a<b){
+		printf("yes");
 	}
 	return 0;
 }

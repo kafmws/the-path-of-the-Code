@@ -1,0 +1,13 @@
+strlen 函数 int len = strlen(str);计算字符串长度的函数，不包含字符串结尾的’\0’
+strcat 与 strncat 函数  strcat(str1, str2);//把str2追加到str1的后面
+			strncat(str1, str2, n);在str1后追加str2的n个字符
+strcmp 与 strncmp 函数  int result1 = strcmp(str1, str2);//比较两个字符串，如果两个字                                                        符串相同，则返回0，否则为非0 
+			int result2 = strncmp(str1, str2, 5);//比较两个字符串的前n个字符
+strcpy 与 strncpy 函数  strcpy(str2, str1);//将str1中的字符串拷贝到str2中
+			strncpy(str2,str1,n);//将str1中的前n个字符拷贝到str2中
+strchr 函数		strchr(str,'b');//该函数是查找字符的函数,结果返回当前字符及其后							面的字符，无则返回为(null)                  
+strstr 函数		strstr(str,target);//在str中查找子串target，结果返回第一个目标子					   串及其后面的字符串
+strtok 函数		strtok(str,"/");//按字符截取字符字串并返回该字符串指针，若继续下					一次截取剩余子串，参数str设为NULL
+字符串转换类型     atoi（str）；
+atoi 字符串→int型     atof   字符串→float型    atol  长整型
+itoa   同理

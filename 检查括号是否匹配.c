@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<string.h>
+#include<string.h>//([([]())(()[])])
 int main() {
 	int t,j,n,time,flag=1;
 	char exam[5][10000];
@@ -10,10 +10,11 @@ int main() {
 	for (t = 0; t < time; t++) {
 		n = strlen(exam[t]);
 		if(n%2==0) {
-			for(j=0; j<n; j+=2) {
+			for(j=0; j<n/2; j++) {
 				if(exam[t][j]=='(') {
-					if(exam[t][j+1]==')') {
-						continue;
+					if(exam[t][n-j-1]==')'||exam[t][j+1]==')') {
+						if(exam[t][j+1]==')'){j++;
+						}
 					} else {
 						t+1==time?printf("No"):printf("No\n");
 						flag=0;
@@ -21,8 +22,10 @@ int main() {
 					}
 				} else if(exam[t][j]=='[') {
 
-					if(exam[t][j+1]==']') {
-						continue;
+					if(exam[t][n-j-1]==']'||exam[t][j+1]==']') {
+						if(exam[t][j+1]==']'){
+							j++;
+						}
 					} else {
 						t+1==time?printf("No"):printf("No\n");
 						flag=0;

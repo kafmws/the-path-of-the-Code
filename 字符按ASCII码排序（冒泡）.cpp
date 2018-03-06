@@ -2,7 +2,7 @@
 #include<string.h>
 void sort(char str[],int x);
 int main(){
-	char str[5][100];
+	char str[500][10];
 	int i,n,x;
 	scanf("%d",&n);
 	for(i=0;i<n;i++){

@@ -1,36 +1,33 @@
 #include<stdio.h>
 #include<stdlib.h>
 int main() {
-	int i,j,n,round,num=1;
+	int i,j,n,num=1,flag=1;
 	scanf("%d",&n);
-	int matrix[n][n];
-	for(i=0;i<n;i++){
-		for(j=0;j<n;j++){
-			matrix[i][j]=0;
+	int matrix[n][n]= {0};
+	i=0,j=0;
+	while(num<=n*n) {
+		while(i<n&&matrix[i+1][j]==0) { //down
+			matrix[++i][j]=num++;
 		}
-	}
-	if(n==1) {
-		matrix[0][0]=1;
-	} else {
-		for(round=0; round<n/2; round++) {
-			for(j=0; j<n; j++) {
-				matrix[0][j]=num++;
-			}
-			for(i=0; i<n; i++) {
-				matrix[i][j]=num++;
-			}
-			for(;j>-1; j--) {
-				matrix[i][j]=num++;
-			}
-			for(;i>-1; i--) {
-				matrix[i][j]=num++;
-			}
-			n--;
+		if(flag){
+			flag=0;
+			i--;
 		}
+		while(j+1<n&&matrix[i][j+1]==0) { //right
+			matrix[i][++j]=num++;
+		}
+		while(i>=0&&matrix[i-1][j]==0) { //up
+			matrix[--i][j]=num++;
+		}
+		i++;
+		while(j>=0&&matrix[i][j-1]==0) { //left
+			matrix[i][--j]=num++;
+		}
+		j++;
 	}
-	for(i=0; i<n+round; i++) {
-		for(j=0; j<n+round; j++) {
-			printf("%d",matrix[i][j]);
+	for(i=0; i<n; i++) {
+		for(j=0; j<n; j++) {
+			printf("%-3d ",matrix[i][j]);
 		}
 		printf("\n");
 	}

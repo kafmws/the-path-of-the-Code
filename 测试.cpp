@@ -1,17 +1,17 @@
 #include <stdio.h>
-
-void f(int **p)
-{
-	
-	++(*p);
-}
-int main()
-{
-	int a[10]={55,2,3,4,5,6,7,8,9,10};
-	int i,*p;
-	for(p=a;p<a+10;f(&p))
-	{
-		printf("%d ",*p);
+#include<math.h>
+int main(){
+	int num;
+	char c;
+	long long a,b;
+	scanf("%d",&num);
+	while(num--){
+		scanf("%x%c%x",&a,&c,&b);
+		if(c=='+'){
+			printf("%o\n",a+b);
+		}else{
+			printf("%o\n",a-b);
+		}
 	}
-	return 0;
+	return 0; 
 }

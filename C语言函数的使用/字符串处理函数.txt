@@ -10,4 +10,4 @@ strstr 函数		strstr(str,target);//在str中查找子串target，结果返回第一个目标子			
 strtok 函数		strtok(str,"/");//按字符截取字符字串并返回该字符串指针，若继续下					一次截取剩余子串，参数str设为NULL
 字符串转换类型     atoi（str）；
 atoi 字符串→int型     atof   字符串→float型    atol  长整型
-itoa   同理
+itoa//非C标准库函数   同理

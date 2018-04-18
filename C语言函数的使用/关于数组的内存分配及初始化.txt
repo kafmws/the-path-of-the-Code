@@ -1,2 +1,2 @@
 <stdlib.h>  中的   malloc函数申请内存分配
-    char *str=（char*）malloc（n*sizeof（char））;//
+    char *str=（char*）malloc（n*sizeof（char））;//n为元素个数

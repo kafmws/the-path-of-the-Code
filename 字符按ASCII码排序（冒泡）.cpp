@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<string.h>
+#include<string.h
 void sort(char str[],int x);
 int main(){
 	char str[500][10];
@@ -7,17 +7,17 @@ int main(){
 	scanf("%d",&n);
 	for(i=0;i<n;i++){
 		scanf("%s",str[i]);
-	} 
+	}
 	for(i=0;i<n;i++){
 		sort(str[i],strlen(str[i]));
 	}
     return 0;
 }
-//冒泡排序 
+//ц╟ещеепР
 void sort(char str[],int x){
 	int i,j,t;
 	for(i=1;i<x;i++){
-		for(j=0;j<x-i;j++){//小前后大 
+		for(j=0;j<x-i;j++){//п║г╟╨С╢С
 			if(str[j]>str[j+1]){
 				t=str[j+1];
 				str[j+1]=str[j];
@@ -26,6 +26,6 @@ void sort(char str[],int x){
 		}
 	}printf("%s",str);
 //	for(i=0;i<x;i++){
-//		
-//	} 
-} 
+//
+//	}
+}

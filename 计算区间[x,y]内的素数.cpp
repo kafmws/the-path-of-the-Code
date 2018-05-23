@@ -16,7 +16,7 @@ int main() {
 	for(i=a==0||a==1?2:a; i<=b; i++) {
 		if(judge(i)||a==2) {
 			max=i;
-//			printf("%d,",i);
+			printf("%d,",i);
 			count++;
 		}
 	}

@@ -1,29 +1,42 @@
 #include<stdio.h>
 #include<string.h>
-#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
-int main() {
-	int n=1;
-	char a[3],b[10];
-	while(scanf("%s %s",a,b)!=EOF) {
-		getchar();
-		printf("Case %d: ",n++);
-		if(a[1]=='b') {
-			if(a[0]=='A')
-				a[0]='G';
-			else
-				a[0]=a[0]-1;
-			a[1]='#';
-			printf("%s %s\n",a,b);
-		} else if(a[1]=='#') {
-			if(a[0]=='G')
-				a[0]='A';
-			else
-				a[0]=a[0]+1;
-			a[1]='b';
-			printf("%s %s\n",a,b);
-		} else
-			printf("UNIQUE\n");
+typedef struct info {
+	int num;
+	struct info * next;
+} node;
+
+typedef struct List {
+	node *head;//指向链表的头
+	node *tail;//指向链表的尾//由其来操纵链表
+} List;
+
+void print(List *list){
+	node *p=list->head->next;
+	for(p;p;p=p->next){
+		printf("%d ",p->num);
 	}
+	printf("\n") ;
+}
+
+int cmp(const void*a,const void*b){
+	return ((node *)a)->num-((node *)b)->num;
+}
+int main(){
+	int num,cnt=0;
+	List list;
+	node *p=(node *)malloc(sizeof(node));
+	list.head=list.tail=p;
+	while(scanf("%d",&num)&&num!=-1){
+		node *pt=(node *)malloc(sizeof(node));
+		pt->next=NULL;
+		pt->num=num;
+		list.tail->next=pt;
+		list.tail=pt;
+		cnt++;
+	}
+	qsort((list.head)->next,cnt,sizeof(node),cmp);
+	print(&list);
 	return 0;
 }

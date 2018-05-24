@@ -20,6 +20,7 @@ void cnt(List *list,int obj);//统计
 int main() {
 	int num;
 	List list;
+	node*p=(node *)malloc(sizeof(node)); 
 	list.head=NULL,list.tail=NULL;//初始化
 	while(scanf("%d",&num),num!=-1) {
 		head_add(&list,num);
@@ -95,3 +96,12 @@ void kill(List *plist,int obj) {
 		}
 	}
 }
+
+//void sort(List *list,int cnt){
+//	node *p=(node *)malloc(sizeof(node));
+//	for(int i=1;i<cnt;i++){
+//		for(p=list->head;p->next;p=p->next){
+//			if(p->next)
+//		}
+//	}
+//}

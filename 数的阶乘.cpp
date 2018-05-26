@@ -31,17 +31,21 @@ char *multiply(int num, char *obj) {//单个数字进行大数计算，单次相乘不可超过int
 
 int main() {
 	printf("请输入数字:\n");
-	int n,i;
+	int n,i,len;
 	char num[10005];
 	scanf("%s",num);
 	n=atoi(num);
-	if(n==0) {
+	len=strlen(num);
+	for(i=0; i<len/2; i++) {
+		char c=num[i];
+		num[i]=num[len-i-1];
+		num[len-i-1]=c;
+	}//翻转
+	if(n==0||n==1) {
 		printf("1");
-	} else if(n>0){
-		n--;
-		while(multiply(n--,num)&&n){
-			
-		}
+	} else if(n>0) {
+		n--;//n已在数组中 
+		while(multiply(n--,num)&&n>1);
 		for(i=strlen(num)-1; i>=0; i--) {
 			printf("%c",num[i]);
 		}

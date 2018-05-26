@@ -141,7 +141,7 @@ int main() {
 		}
 		//判断输出位数
 		//两数相乘	结果为两个因数位数和或者位数和减一
-		if (obj[len1 + len2 - 1] != '0') {
+		if (obj[len1 + len2 - 1] >'0'&&obj[len1 + len2 - 1]<='9') {
 			printf("%c", obj[len1 + len2 - 1]);
 		}
 		for (i = len1 + len2 - 2; i >= 0; i--) {

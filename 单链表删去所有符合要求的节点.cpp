@@ -31,6 +31,21 @@ void print(node *head){
 	} 
 }
 
+//void kill_age(node *head,int age){
+//	node *p=head->next,*pre=head;
+//	int flag=0;
+//	for(p;p;p=p->next){
+//		if(p->age==age){
+//			pre->next=p->next;
+//			free(p);
+//			flag=1;
+//		}
+//	}
+//	if(flag==0){
+//		printf("没有这么大的学生\n");
+//	}
+//}
+
 void kill_age(node *head,int age){
 	node *p=head->next,*pre=head;
 	int flag=0;
@@ -38,8 +53,10 @@ void kill_age(node *head,int age){
 		if(p->age==age){
 			pre->next=p->next;
 			free(p);
+			p=pre;
 			flag=1;
 		}
+		else pre=pre->next;
 	}
 	if(flag==0){
 		printf("没有这么大的学生\n");
@@ -51,7 +68,7 @@ int main(){
 	head->next=NULL;
 	int i=0;
 	printf("请输入学号，名字，性别，年龄：\n");
-	while(i++!=4){
+	while(i++!=6){
 		add(head);
 	}
 	printf("现在的学生信息为：\n");
